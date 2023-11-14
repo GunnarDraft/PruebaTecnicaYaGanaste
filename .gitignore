@@ -1,6 +1,3 @@
-# .gitignore
-.env
-### NextJS ###
 # dependencies
 /node_modules
 /.pnp
@@ -24,7 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
 
 # local env files
 .env*.local
