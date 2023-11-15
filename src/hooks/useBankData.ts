@@ -25,17 +25,12 @@ const useBankData = () => {
     const { banks, setBanks } = useStore();
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchData = async () => { 
             try {
-                const response = await fetch(process.env.NEXT_PUBLIC_URL_BANKS, {
-                    method: 'GET', 
+                const response = await axios.get(process.env.NEXT_PUBLIC_URL_BANKS, {
+                    
                 });
-                if (response.ok) {
-                    const data = await response.json();
-                    setBanks(data);
-                } else {
-                    console.error('Error fetching data:', response.statusText);
-                }
+                if (response.status === 200) { setBanks(response.data); } 
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
