@@ -26,7 +26,7 @@ const useBankData = () => {
     useEffect(() => {
         const fetchData = async () => { 
             try {
-                const response = await axios.get(process.env.URL_BANKS || "https://dev.obtenmas.com/catom/api/challenge/banks", {
+                const response = await axios.get(process.env.URL_BANKS || "dev.obtenmas.com/catom/api/challenge/banks", {
                     headers: {
                         'Content-Type': 'application/json',
                         'Referrer-Policy': 'no-referrer',
