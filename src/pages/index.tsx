@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react';
-// import BankList from '../components/BankList';
+import { useEffect } from 'react';
+import BankList from '../components/BankList';
 
 const Home = () => {
     return (
-        <div>
-            hola mundo
-            {/* <BankList /> */}
+        <div> 
+             <BankList />
         </div>
     );
 };
