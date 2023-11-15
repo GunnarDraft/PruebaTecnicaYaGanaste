@@ -28,12 +28,7 @@ const useBankData = () => {
         const fetchData = async () => {
             try {
                 const response = await fetch(process.env.NEXT_PUBLIC_URL_BANKS, {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Access-Control-Allow-Origin': '*'
-                    },
-                    credentials: 'include', // O 'same-origin' según tus necesidades
+                    method: 'GET', 
                 });
                 if (response.ok) {
                     const data = await response.json();
