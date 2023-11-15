@@ -26,10 +26,17 @@ const useBankData = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("https://dev.obtenmas.com/catom/api/challenge/banks", {
+                const response = await axios.get(process.env.URL_BANKS, {
                     headers: {
                         'Content-Type': 'application/json',
-                       
+                        'Referrer-Policy': 'no-referrer',
+                        'X-Content-Type-Options': 'nosniff',
+                        'X-Frame-Options': 'deny',
+                        'X-XSS-Protection': '1; mode=block',
+                        'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
+                        'Content-Security-Policy': 'default-src \'self\'',
+                        'Feature-Policy': 'geolocation \'self\'; microphone \'none\'',
+                        'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
                     },
                     withCredentials: true,
                 });
