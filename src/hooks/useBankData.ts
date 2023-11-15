@@ -22,26 +22,22 @@ const useStore = create<IBankingList>((set) => ({
 
 const useBankData = () => {
     const { banks, setBanks } = useStore();
- 
-    async function getServerSideProps() {
-        const fetchData = async () => {
+
+    useEffect(() => {
+        const fetchData = async () => { 
             try {
                 const response = await axios.get(process.env.NEXT_PUBLIC_URL_BANKS, {
-                    headers: {
-                        'Content-Type': 'application/json', 
-                        'Access-Control-Allow-Origin': '*',
-                        'Access-Control-Allow-Methods': 'GET',
-                    },
+  
                     withCredentials: true,
                 });
-                if (response.status === 200) { setBanks(response.data); }
+                if (response.status === 200) { setBanks(response.data); } 
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         };
         fetchData();
-    }
-    getServerSideProps()
+    }, [setBanks]);
+
     return banks;
 }
 
