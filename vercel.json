@@ -1,7 +1,7 @@
 {
     "headers": [
         {
-            "source": "/hooks/(.*)",
+            "source": "/",
             "headers": [
                 {
                     "key": "Access-Control-Allow-Credentials",
