@@ -28,15 +28,7 @@ const useBankData = () => {
             try {
                 const response = await axios.get(process.env.NEXT_PUBLIC_URL_BANKS, {
                     headers: {
-                        'Content-Type': 'application/json',
-                        'Referrer-Policy': 'no-referrer',
-                        'X-Content-Type-Options': 'nosniff',
-                        'X-Frame-Options': 'deny',
-                        'X-XSS-Protection': '1; mode=block',
-                        'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
-                        'Content-Security-Policy': 'default-src \'self\'',
-                        'Feature-Policy': 'geolocation \'self\'; microphone \'none\'',
-                        'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+                        'Content-Type': 'application/json', 
                         'Access-Control-Allow-Origin': '*',
                         'Access-Control-Allow-Methods': 'GET',
                     },
