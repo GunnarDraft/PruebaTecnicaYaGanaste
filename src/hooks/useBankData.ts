@@ -26,7 +26,7 @@ const useBankData = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://dev.obtenmas.com/catom/api/challenge/banks');
+                const response = await axios.get(process.env.NEXT_PUBLIC_BANKS);
                 if (response.status === 200) {
                     setBanks(response.data);
                 }
