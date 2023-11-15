@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import BankList from '../components/BankList';
 
 const Home = () => {
