@@ -29,6 +29,7 @@ const useBankData = () => {
                 const response = await axios.get(process.env.NEXT_PUBLIC_BANKS, {
                     headers: {
                         'Access-Control-Allow-Origin': 'https://main--precious-zabaione-31b7c8.netlify.app',  
+                        'Access-Control-Allow-Methods':'GET'
                     },
                 });
                 if (response.status === 200) {
