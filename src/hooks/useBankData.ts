@@ -26,11 +26,7 @@ const useBankData = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(process.env.NEXT_PUBLIC_BANKS, {
-                    headers: {
-                        'Access-Control-Allow-Origin': ['https://main--precious-zabaione-31b7c8.netlify.app/','https://prueba-tecnica-ya-ganaste.vercel.app/'],  
-                    },
-                });
+                const response = await axios.get(process.env.NEXT_PUBLIC_BANKS);
                 if (response.status === 200) {
                     setBanks(response.data);
                 }
