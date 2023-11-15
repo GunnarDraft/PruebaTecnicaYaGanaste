@@ -2,6 +2,7 @@
 import { useEffect } from 'react'
 import { create } from 'zustand'
 import axios from 'axios'
+import type { NextApiRequest, NextApiResponse } from 'next'
 
 interface IBankingList {
     banks: IBank[],
@@ -24,13 +25,22 @@ const useBankData = () => {
     const { banks, setBanks } = useStore();
 
     useEffect(() => {
-        const fetchData = async () => { 
+        const fetchData = async () => {
             try {
-                const response = await axios.get(process.env.NEXT_PUBLIC_URL_BANKS, {
-                    
-                    withCredentials: true,
+                const response = await fetch(process.env.NEXT_PUBLIC_URL_BANKS, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*'
+                    },
+                    credentials: 'include', // O 'same-origin' según tus necesidades
                 });
-                if (response.status === 200) { setBanks(response.data); } 
+                if (response.ok) {
+                    const data = await response.json();
+                    setBanks(data);
+                } else {
+                    console.error('Error fetching data:', response.statusText);
+                }
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
