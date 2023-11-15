@@ -26,7 +26,14 @@ const useBankData = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(process.env.NEXT_PUBLIC_BANKS);
+                const response = await axios.get(process.env.NEXT_PUBLIC_BANKS, {
+                    headers: {
+                        'Content-Type': 'application/json', 
+                        'Origin': 'https://prueba-tecnica-ya-ganaste.vercel.app', 
+                        'Referer': 'https://prueba-tecnica-ya-ganaste.vercel.app',
+                      
+                    }
+                });
                 if (response.status === 200) {
                     setBanks(response.data);
                 }
