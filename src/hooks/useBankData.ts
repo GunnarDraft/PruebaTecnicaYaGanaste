@@ -31,7 +31,6 @@ const useBankData = () => {
                         'Content-Type': 'application/json', 
                         'Origin': 'https://prueba-tecnica-ya-ganaste.vercel.app/', 
                         'Referer': 'https://prueba-tecnica-ya-ganaste.vercel.app/',
-                      
                     }
                 });
                 if (response.status === 200) {

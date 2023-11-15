@@ -16,7 +16,7 @@ function BankList() {
                         <p><b>URL: </b><a href={bank.url}> {bank.url}</a></p>
                     </Li>
 
-                )) : <Li>Sin Datos</Li>}
+                )) : <Li> <p><b> Sin Datos </b> </p></Li>}
             </Ul>
         </BankListContent>
     );
