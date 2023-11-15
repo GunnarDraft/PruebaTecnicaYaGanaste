@@ -27,11 +27,7 @@ const useBankData = () => {
         const fetchData = async () => { 
             try {
                 const response = await axios.get(process.env.NEXT_PUBLIC_URL_BANKS, {
-                    headers: {
-                        'Content-Type': 'application/json', 
-                        'Access-Control-Allow-Origin': '*',
-                        'Access-Control-Allow-Methods': 'GET'
-                    },
+                    
                     withCredentials: true,
                 });
                 if (response.status === 200) { setBanks(response.data); } 
