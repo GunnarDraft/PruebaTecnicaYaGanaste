@@ -28,7 +28,7 @@ const useBankData = () => {
             try {
                 const response = await axios.get(process.env.NEXT_PUBLIC_BANKS, {
                     headers: {
-                        'Access-Control-Allow-Origin': ['https://prueba-tecnica-ya-ganaste.vercel.app', 'https://dev.obtenmas.com/catom/api/challenge/banks','https://main--precious-zabaione-31b7c8.netlify.app'],  
+                        'Access-Control-Allow-Origin': 'https://main--precious-zabaione-31b7c8.netlify.app',  
                     },
                 });
                 if (response.status === 200) {
